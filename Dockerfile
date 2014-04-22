@@ -3,7 +3,7 @@ MAINTAINER Ryan Fowler <ryan.fowler@singlewire.com>
 
 RUN apt-get update
 RUN apt-get install -y aptitude
-RUN aptitude install --without-recommends -y golang openjdk-7-jdk emacs24-nox git-core
+RUN aptitude install --without-recommends -y golang openjdk-7-jdk emacs24-nox git-core curl
 
 RUN mkdir /gocode
 ENV GOPATH /gocode

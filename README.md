@@ -8,3 +8,4 @@ Base docker image for ryfow projects. Supplies useful dependencies including:
 - emacs24-nox
 - git-core
 - docker
+- curl
