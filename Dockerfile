@@ -1,4 +1,4 @@
-FROM      ubuntu:13.10
+FROM      ubuntu:14.04
 MAINTAINER Ryan Fowler <ryan.fowler@singlewire.com>
 
 RUN apt-get update
