@@ -18,4 +18,4 @@ RUN mkdir -p /var/log/supervisor
 EXPOSE 22 9001
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD sshd.conf /etc/supervisor/conf.d/sshd.conf
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
