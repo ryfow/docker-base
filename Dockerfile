@@ -18,4 +18,11 @@ RUN mkdir -p /var/log/supervisor
 EXPOSE 22 9001
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD sshd.conf /etc/supervisor/conf.d/sshd.conf
+ADD watch_puppet.conf /etc/supervisor/conf.d/watch_puppet.conf
+ADD watch_puppet.sh /watch_puppet.sh
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+
+RUN gem install puppet --no-rdoc --no-ri
+VOLUME ["/var/lib/puppet"]
+RUN sed -i.bak -e 's/session    required     pam_loginuid.so/session    optional     pam_loginuid.so/' /etc/pam.d/sshd
+RUN echo '%adm ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
