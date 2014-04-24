@@ -2,7 +2,7 @@ FROM      ubuntu:13.10
 MAINTAINER Ryan Fowler <ryan.fowler@singlewire.com>
 
 RUN apt-get update
-RUN apt-get install aptitude
+RUN apt-get install -y aptitude
 RUN aptitude install --without-recommends -y golang openjdk-7-jdk emacs24-nox git-core curl supervisor ruby-full openssh-server inotify-tools
 
 RUN mkdir /gocode
